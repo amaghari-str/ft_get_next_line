@@ -10,6 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+char	*ft_strchr(const char *str, int c)
+{
+	char	d;
+	int		i;
+
+	i = 0;
+	d = (char)c;
+	while (str[i])
+	{
+		if (str[i] == d)
+			return ((char *)str + i);
+		i++;
+	}
+	if (str[i] == d)
+		return ((char *)str + i);
+	return (NULL);
+}
+
+int ft_strchar(char *stach, char cerecter, size_t from)
+{
+	int	i;
+	i = from;
+	if (!from)
+		i = 0;
+	while (stach[i] != cerecter)
+		i++;
+	if (!stach[i])
+		return (0);
+	return i;
+}
+
 static char	*ft_strcpy(char *dest, const char *src)
 {
 	int	i;
@@ -37,8 +68,33 @@ char	*ft_strdup(const char *src)
 
 void go_read (char *stach, int fd)
 {
-	int	i;
-	size_t	j;
+	static int	i;
+	static size_t	j;
+	char	*p;
 
-	i = 0;
+	i = 42;
+	if (ft_strchar(stach, '\n'))
+	{
+		j = ft_strchar(stach, '\n', j);
+	}
+	else
+	{
+		p = memaloc((i *= 2));
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
