@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 16:55:24 by amaghari          #+#    #+#             */
-/*   Updated: 2026/11/03 20:14:22 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/04 18:15:25 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -17,7 +17,7 @@ int ft_strchr(const char *str, char c)
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (str && str[i])
 	{
 		if (str[i] == c)
 			return (i);
@@ -41,12 +41,12 @@ static char	*copy_n(const char *s, int n)
 	return (res);
 }
 
-static int ft_strlen(char *s)
+static int ft_strlen(const char *s)
 {
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (s && s[i])
 		i++;
 	return (i);
 }
@@ -56,17 +56,14 @@ static char *addmem(int len, char *s)
 	int	i;
 	char	*temp;
 
-	i = 0;
 	temp = malloc(len + 42 + 1);
 	if (!temp)
-		return (NULL);
-	while (s[i])
-	{
+		return (free(s), NULL);
+	i = -1;
+	while (++i < len)
 		temp[i] = s[i];
-		i++;
-	}
-	temp[i] = '\0';
-	free (s);
+	temp[len] = '\0';
+	free(s);
 	return (temp);
 }
 
@@ -80,6 +77,8 @@ char *read_line(int fd, char *stach)
 	{
 		len = ft_strlen(stach);
 		stach = addmem(len, stach);
+		if (!stach)
+			return (NULL);
 		bites_readed = read(fd, stach + len, 42);
 		if (bites_readed < 0)
 			return (free(stach), NULL);
@@ -91,7 +90,7 @@ char *read_line(int fd, char *stach)
 char *get_next_line (int fd)
 {
 	static char	*stach;
-	int	len;
+	static int	len;
 	char	*rest;
 	char	*line;
 
