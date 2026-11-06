@@ -6,12 +6,12 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 16:55:24 by amaghari          #+#    #+#             */
-/*   Updated: 2026/11/04 18:15:25 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/06 14:26:34 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
 #include <unistd.h>
-
+#include "get_next_line.h"
 int ft_strchr(const char *str, char c)
 {
 	int	i;
