@@ -6,9 +6,10 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/01 18:04:32 by amaghari          #+#    #+#             */
-/*   Updated: 2026/11/06 16:35:27 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/10 13:37:20 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "get_next_line.h"
 
 int	ft_strchr(const char *str, char c)
