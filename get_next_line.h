@@ -6,15 +6,19 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/01 17:50:10 by amaghari          #+#    #+#             */
-/*   Updated: 2026/11/06 16:40:16 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/10 14:54:54 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_NEXT_LINE_H
-# define FT_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # include <unistd.h>
 # include <stdlib.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 int		ft_strchr(const char *str, char c);
 int		ft_strlen(const char *s);

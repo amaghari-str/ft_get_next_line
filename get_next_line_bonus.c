@@ -6,7 +6,7 @@
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 13:29:07 by amaghari          #+#    #+#             */
-/*   Updated: 2026/11/10 13:35:51 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/10 14:46:41 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*get_next_line(int fd)
 {
 	static char	*stach[1024];
-	int		len;
+	int			len;
 	char		*rest;
 	char		*line;
 

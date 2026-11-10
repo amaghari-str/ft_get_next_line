@@ -6,11 +6,11 @@
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 13:37:09 by amaghari          #+#    #+#             */
-/*   Updated: 2026/11/10 13:37:11 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/10 14:25:48 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	ft_strchr(const char *str, char c)
 {
@@ -56,7 +56,7 @@ static char	*addmem(int len, char *s)
 	int		i;
 	char	*temp;
 
-	temp = malloc(len + 42 + 1);
+	temp = malloc(len + BUFFER_SIZE + 1);
 	if (!temp)
 		return (free(s), NULL);
 	i = -1;
@@ -79,7 +79,7 @@ char	*read_line(int fd, char *stach)
 		stach = addmem(len, stach);
 		if (!stach)
 			return (NULL);
-		bites_readed = read(fd, stach + len, 42);
+		bites_readed = read(fd, stach + len, BUFFER_SIZE);
 		if (bites_readed < 0)
 			return (free(stach), NULL);
 		stach[len + bites_readed] = '\0';

@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/01 18:04:32 by amaghari          #+#    #+#             */
-/*   Updated: 2026/11/10 13:37:20 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/10 14:27:20 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static char	*addmem(int len, char *s)
 	int		i;
 	char	*temp;
 
-	temp = malloc(len + 42 + 1);
+	temp = malloc(len + BUFFER_SIZE + 1);
 	if (!temp)
 		return (free(s), NULL);
 	i = -1;
@@ -79,7 +79,7 @@ char	*read_line(int fd, char *stach)
 		stach = addmem(len, stach);
 		if (!stach)
 			return (NULL);
-		bites_readed = read(fd, stach + len, 42);
+		bites_readed = read(fd, stach + len, BUFFER_SIZE);
 		if (bites_readed < 0)
 			return (free(stach), NULL);
 		stach[len + bites_readed] = '\0';
