@@ -6,7 +6,7 @@
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 11:50:18 by amaghari          #+#    #+#             */
-/*   Updated: 2026/11/10 15:02:33 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/17 18:57:27 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #  define BUFFER_SIZE 42
 # endif
 
-#  if BUFFER_SIZE < 10
+# if BUFFER_SIZE < 10
 #  undef BUFFER_SIZE
 #  define BUFFER_SIZE 10
 # endif
